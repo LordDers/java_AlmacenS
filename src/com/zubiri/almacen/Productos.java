@@ -1,6 +1,5 @@
 package com.zubiri.almacen;
 
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Scanner;
 import java.util.InputMismatchException;
@@ -9,16 +8,22 @@ public class Productos {
 	
 	private ArrayList<Producto> listaProductos = new ArrayList<Producto>();	
 	
-	public Productos(Scanner sc) throws IOException {
+	public Productos(Scanner sc) {
 
-		System.out.println("Cuantos productos quieres insertar? ");
-		int seleccion;
-		try {
-			seleccion = sc.nextInt();
-		} catch (InputMismatchException e) {
-			System.out.println("aa");
-			seleccion = sc.nextInt();
-		}
+		/*System.out.println("Cuantos productos quieres insertar? ");
+		int seleccion = sc.nextInt();*/
+		int seleccion = -1;
+		
+		do {
+		    try {
+		        System.out.println("¿Cuantos productos quieres insertar? ");
+		        seleccion = sc.nextInt();
+		    } catch (InputMismatchException e) {
+		        System.out.println("Debes introducir un número.\n");
+		    }
+		    sc.nextLine(); // clears the buffer // Si no se comenta, bucle
+		} while (seleccion < 0);
+		
 		for (int i = 0; i < seleccion; i++) {
 			
 			System.out.println("¿Qué producto quieres insertar?");

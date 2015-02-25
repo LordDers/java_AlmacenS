@@ -7,7 +7,6 @@ package com.zubiri.almacen;
 import java.util.ArrayList;
 import java.io.BufferedReader;
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
@@ -28,7 +27,6 @@ public class Distribuidores {
 
 	public static void leerDistribuidores(String fichero) throws IOException {
 		
-		try {
 			String linea;
 			FileInputStream f;
 		    InputStreamReader fr;
@@ -49,9 +47,6 @@ public class Distribuidores {
 				linea = br.readLine();
 			}
 			br.close();
-		} catch (FileNotFoundException fichero_no_encontrado) {
-			System.out.println("Fichero incorrecto.");
-		}
 	 }
 	 
 	 public static Distribuidor buscarDistribuidor(String nombre) {
@@ -83,4 +78,8 @@ public class Distribuidores {
 			System.out.println(listaDistribuidores.get(i).formattedDistribuidor());
 		}
 	}
+	
+	/*public static int numeroDistribuidores() {
+		return listaDistribuidores.size();
+	}*/
 }

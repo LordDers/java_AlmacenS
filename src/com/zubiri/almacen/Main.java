@@ -18,7 +18,7 @@ public class Main {
 			System.out.println("java main.java <fichero_distribuidores>");
 			System.exit(-1);
 		} */
-		
+
 		try {
 			//Leemos la lista de distribuidores del fichero.
 			Distribuidores.leerDistribuidores(args[0]);
@@ -26,9 +26,9 @@ public class Main {
 			System.out.println("Fichero incorrecto.");
 			System.out.print("Introduzca el nombre el fichero: ");
 			Distribuidores.leerDistribuidores(sc.next());
-		} finally {
+		} /*finally {
 			System.out.println("El fichero se ha leído correctamente.\n");
-		}
+		}*/
 
 		do {
 			
